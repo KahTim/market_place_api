@@ -29,3 +29,15 @@ module MarketPlaceApi
     config.generators.system_tests = nil
   end
 end
+
+config.generators do |g|
+  g.test_framework :rspec, fixture: true
+  g.fixture_placement :factory_bot, dir: 'spec/factories'
+  g.view_specs false
+  g.helper_specs false
+  g.stylesheets = false
+  g.javascripts = false
+  g.helper = false
+end
+
+config.autoload_paths += %w(\#{config.root}/lib)
